@@ -17,10 +17,10 @@ before_script:
   - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1280x1024x16"
 script:
 
-  - "pybot --variable SAUCE_USERNAME:S_USERNAME --variable SAUCE_ACCESS_KEY:S_ACCESS_KEY --outputdir MyBuild /home/travis/build/Rafikhan29/SauceLabs_Gmail/tests/valid_login.txt"
+  - "pybot --variable SAUCE_USERNAME:S_USERNAME --variable SAUCE_ACCESS_KEY:S_ACCESS_KEY --variable BROWSER:BR --outputdir MyBuild /home/travis/build/Rafikhan29/SauceLabs_Gmail/tests/valid_login.txt"
 env:
   global:
     - S_USERNAME: Rafikhan29
     - S_ACCESS_KEY: 47ab59b8-9b87-4433-8fa1-b02111cabbba
   matrix:
-  - BROWSER=firefox
+  - BR=firefox
