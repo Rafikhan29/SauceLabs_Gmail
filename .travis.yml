@@ -12,14 +12,10 @@ install:
   # - pip install zerorpc
   #- "if [[ ${BROWSER} == 'ie' ]]; then pip install ie_only_pkg; fi"
 
-env:
-  global:
-    - S_USERNAME=Rafikhan29
-    - S_ACCESS_KEY=47ab59b8-9b87-4433-8fa1-b02111cabbba
 before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
   - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1280x1024x16"
 script:
 
-  - "pybot --variable USERNAME:$S_USERNAME --variable ACCESS_KEY:$S_ACCESS_KEY --outputdir MyBuild /home/travis/build/Rafikhan29/SauceLabs_Gmail/tests/valid_login.txt"
+  - "pybot --outputdir MyBuild /home/travis/build/Rafikhan29/SauceLabs_Gmail/tests/valid_login.txt"
