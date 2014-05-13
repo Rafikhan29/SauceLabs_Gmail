@@ -18,7 +18,8 @@ ${SAUCE_ACCESS_KEY}    47ab59b8-9b87-4433-8fa1-b02111cabbba
 *** Keywords ***
 Open Login Page
     [Documentation]    Maximize Browser Window
-    Open Browser    ${LOGIN URL}    ${BROWSER}    remote_url=${SELENIUM_HOST}    desired_capabilities={DESIRED_CAPABILITIES}
+    Log    ${SELENIUM HOST}
+    Open Browser    ${LOGIN URL}    ${BROWSER}    remote_url=${SELENIUM HOST}    desired_capabilities=${DESIRED_CAPABILITIES}
     Set Selenium Speed    ${DELAY}
 
 Go To Login Page
