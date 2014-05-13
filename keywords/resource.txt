@@ -16,7 +16,7 @@ ${DESIRED_CAPABILITIES}    name:Testing RobotFramework Selenium2Library,platform
 *** Keywords ***
 Open Login Page
     [Documentation]    Maximize Browser Window
-    Open Browser    ${LOGIN URL}    ${BROWSER}    remote_url=${SELENIUM HOST}    desired_capabilities=${DESIRED_CAPABILITIES}
+    Open Browser    ${LOGIN URL}    ${BROWSER}
     Set Selenium Speed    ${DELAY}
 
 Go To Login Page

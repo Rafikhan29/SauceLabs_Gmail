@@ -20,6 +20,12 @@ script:
 
   - "pybot --outputdir MyBuild /home/travis/build/Rafikhan29/SauceLabs_Gmail/tests/valid_login.txt"
   #- python client.py
+
+addons:
+sauce_connect: 
+  username: "Rafikhan29"
+  access_key: "47ab59b8-9b87-4433-8fa1-b02111cabbba"
+
   
 env:
   matrix:
