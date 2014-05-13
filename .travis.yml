@@ -15,21 +15,12 @@ before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
   - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1280x1024x16"
-  #- bash sauce_connect_setup.sh
 script:
 
   - "pybot --outputdir MyBuild /home/travis/build/Rafikhan29/SauceLabs_Gmail/tests/valid_login.txt"
-  #- python client.py
-
-addons:
-sauce_connect: 
-  username: "Rafikhan29"
-  access_key: "47ab59b8-9b87-4433-8fa1-b02111cabbba"
-
-  
 env:
+  global:
+    - SAUCE_USERNAME: Rafikhan29
+    - SAUCE_ACCESS_KEY: 47ab59b8-9b87-4433-8fa1-b02111cabbba
   matrix:
   - BROWSER=firefox
-  #- BROWSER=ie # will be added when we have completed SauceLabs CI
-  #- BROWSER=safari # will be added after #247 merged
-
