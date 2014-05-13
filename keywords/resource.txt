@@ -10,7 +10,7 @@ ${ACCOUNT URL}    https://www.${HOST}/account
 ${VALID USER}     asd
 ${VALID PASSWD}    xyz
 ${BROWSER}        firefox
-${SELENIUM_HOST}    http://Rafikhan29:47ab59b8-9b87-4433-8fa1-b02111cabbba@ondemand.saucelabs.com:80/wd/hub
+${SELENIUM_HOST}    df
 ${DESIRED_CAPABILITIES}    name:Testing RobotFramework Selenium2Library,platform:Windows 7
 ${SAUCE_USERNAME}    Rafikhan29
 ${SAUCE_ACCESS_KEY}    47ab59b8-9b87-4433-8fa1-b02111cabbba

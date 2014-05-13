@@ -17,8 +17,7 @@ before_script:
   - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1280x1024x16"
 script:
 
-  - "pybot --outputdir MyBuild /home/travis/build/Rafikhan29/SauceLabs_Gmail/tests/valid_login.txt"
+  - "pybot --variable SELENIUM_HOST:URL --outputdir MyBuild /home/travis/build/Rafikhan29/SauceLabs_Gmail/tests/valid_login.txt"
 env:
   global:
-    - S_USERNAME: Rafikhan29
-    - S_ACCESS_KEY: 47ab59b8-9b87-4433-8fa1-b02111cabbba
+    - URL: http://Rafikhan29:47ab59b8-9b87-4433-8fa1-b02111cabbba@ondemand.saucelabs.com:80/wd/hub
