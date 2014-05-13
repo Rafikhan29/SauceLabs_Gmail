@@ -1,0 +1,40 @@
+*** Settings ***
+Documentation     A resource file containing the demo app specific keywords and variables that create our own domain specific language. Also SeleniumLibrary itself is imported here so that tests only need to import this resource file.
+Library           Selenium2Library
+
+*** Variables ***
+${DELAY}          0
+${HOST}           saucelabs.com
+${LOGIN URL}      https://www.gmail.com
+${ACCOUNT URL}    https://www.${HOST}/account
+${VALID USER}     asd
+${VALID PASSWD}    xyz
+${BROWSER}        firefox
+${SELENIUM HOST}    http://jody3t:c1ce8d09-98c7-4f5b-a533-fb5bdb34cbe0@ondemand.saucelabs.com:80/wd/hub
+${DESIRED_CAPABILITIES}    name:Testing RobotFramework Selenium2Library,platform:Windows 7
+
+*** Keywords ***
+Open Login Page
+    [Documentation]    Maximize Browser Window
+    Open Browser    ${LOGIN URL}    ${BROWSER}    remote_url=${SELENIUM HOST}    desired_capabilities=${DESIRED_CAPABILITIES}
+    Set Selenium Speed    ${DELAY}
+
+Go To Login Page
+    Go To    ${LOGIN URL}
+    Title Should Be    Login - Sauce Labs
+
+Input Username
+    [Arguments]    ${username}
+    Input Text    Email    ${username}
+
+Input Password
+    [Arguments]    ${password}
+    Input Text    Passwd    ${password}
+
+Submit Credentials
+    Click Element    signIn
+
+Verify Login
+    Wait Until Element Is Visible    errormsg_0_Passwd    20s    WELCOME
+    ${LoginError}    Get Text    errormsg_0_Passwd
+    Should Contain    ${LoginError}    email or password you entered is incorrect.
