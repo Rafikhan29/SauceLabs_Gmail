@@ -12,7 +12,7 @@ ${VALID PASSWD}    xyz
 ${BROWSER}        firefox
 ${SELENIUM_HOST}    http://${SAUCE_USERNAME}:${SAUCE_ACCESS_KEY}@ondemand.saucelabs.com:80/wd/hub
 ${DESIRED_CAPABILITIES}    name:Testing RobotFramework Selenium2Library,platform:Windows 7
-${SAUCE_USERNAME}    Rafikhan29
+${SAUCE_USERNAME}    Rafikhan
 ${SAUCE_ACCESS_KEY}    47ab59b8-9b87-4433-8fa1-b02111cabbba
 
 *** Keywords ***
