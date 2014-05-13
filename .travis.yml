@@ -18,7 +18,7 @@ before_script:
   - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1280x1024x16"
 script:
 
-  - "pybot --variable USERNAME:$S_USERNAME --variable ACCESS_KEY:$S_ACCESS_KEY --outputdir MyBuild /home/travis/build/Rafikhan29/SauceLabs_Gmail/tests/valid_login.txt"
+  - "pybot --variable USERNAME:$S_USERNAME --variable ACCESS_KEY:$S_ACCESS_KEY --outputdir /home/travis/build/Rafikhan29/SauceLabs_Gmail/tests/ /home/travis/build/Rafikhan29/SauceLabs_Gmail/tests/valid_login.txt"
 env:
   global:
     - S_USERNAME=Rafikhan29
