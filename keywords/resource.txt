@@ -10,13 +10,15 @@ ${ACCOUNT URL}    https://www.${HOST}/account
 ${VALID USER}     asd
 ${VALID PASSWD}    xyz
 ${BROWSER}        firefox
-${SELENIUM HOST}    http://jody3t:c1ce8d09-98c7-4f5b-a533-fb5bdb34cbe0@ondemand.saucelabs.com:80/wd/hub
+${SELENIUM HOST}    http://${SAUCE_USERNAME}:${SAUCE_ACCESS_KEY}@ondemand.saucelabs.com:80/wd/hub
 ${DESIRED_CAPABILITIES}    name:Testing RobotFramework Selenium2Library,platform:Windows 7
+${SAUCE_USERNAME}    Rafikhan29
+${SAUCE_ACCESS_KEY}    47ab59b8-9b87-4433-8fa1-b02111cabbba
 
 *** Keywords ***
 Open Login Page
     [Documentation]    Maximize Browser Window
-    Open Browser    ${LOGIN URL}    ${BROWSER}
+    Open Browser    ${LOGIN URL}    ${BROWSER}    remote_url=${SELENIUM_HOST}    desired_capabilities={DESIRED_CAPABILITIES}
     Set Selenium Speed    ${DELAY}
 
 Go To Login Page
