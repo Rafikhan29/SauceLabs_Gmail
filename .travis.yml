@@ -11,9 +11,6 @@ install:
   - pip install docutils
   # - pip install zerorpc
   #- "if [[ ${BROWSER} == 'ie' ]]; then pip install ie_only_pkg; fi"
-env:
-  global:
-  - URL= http://Rafikhan29:47ab59b8-9b87-4433-8fa1-b02111cabbba@ondemand.saucelabs.com:80/wd/hub
 before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
@@ -22,3 +19,6 @@ script:
 
   - "pybot --variable SELENIUM_HOST:URL --outputdir MyBuild /home/travis/build/Rafikhan29/SauceLabs_Gmail/tests/valid_login.txt"
 
+env:
+  global:
+  - URL= http://Rafikhan29:47ab59b8-9b87-4433-8fa1-b02111cabbba@ondemand.saucelabs.com:80/wd/hub
