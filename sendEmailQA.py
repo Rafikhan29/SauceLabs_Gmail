@@ -18,7 +18,7 @@ def main(argv):
     
     msg = MIMEMultipart()
    
-    recipients = ['rafikhan.p@tenxlabs.com','mahendra.p@tenxlabs.com']
+    recipients = ['rafikhan.p@tenxlabs.com','sandesha.thandra@tenxlabs.com']
 
     me = 'rafikhan.p@tenxlabs.com'
     subject = 'The number of critical tests that failed are '
