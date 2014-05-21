@@ -27,7 +27,7 @@ script:
   - ls
   - cd /home/travis/build/Rafikhan29/SauceLabs_Gmail/results/
   - ls
-  
+  - cd /home/travis/build/Rafikhan29/SauceLabs_Gmail/
   - python sendEmailQA.py /home/travis/build/Rafikhan29/SauceLabs_Gmail/
   
 #after_success: 
