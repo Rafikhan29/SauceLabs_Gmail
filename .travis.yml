@@ -29,7 +29,7 @@ after_success:
         - cat /home/travis/build/Rafikhan29/SauceLabs_Gmail/results/log.html
         - cat /home/travis/build/Rafikhan29/SauceLabs_Gmail/results/report.html
         #- cd /home/travis/build/Rafikhan29/SauceLabs_Gmail/
-        - mkdir /home/travis/build/Rafikhan29/SauceLabs_Gmail/Results
+        #- mkdir /home/travis/build/Rafikhan29/SauceLabs_Gmail/Results
         - cp /home/travis/build/Rafikhan29/SauceLabs_Gmail/results/* /home/travis/build/Rafikhan29/SauceLabs_Gmail/Results/
         
 env:
