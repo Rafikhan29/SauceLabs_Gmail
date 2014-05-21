@@ -9,9 +9,9 @@ install:
   - pip install selenium
   - pip install decorator
   - pip install docutils
-  - pip install gevent
-  - pip install pyzmq
-  - pip install zerorpc
+  #- pip install gevent
+  #- pip install pyzmq
+  #- pip install zerorpc
   #- "if [[ ${BROWSER} == 'ie' ]]; then pip install ie_only_pkg; fi"
 
 before_script:
@@ -19,8 +19,8 @@ before_script:
   - "sh -e /etc/init.d/xvfb start"
   - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1280x1024x16"
 script:
-  #- "pybot --variable USERNAME:$S_USERNAME --variable ACCESS_KEY:$S_ACCESS_KEY --outputdir /home/travis/build/Rafikhan29/SauceLabs_Gmail/tests/ /home/travis/build/Rafikhan29/SauceLabs_Gmail/tests/valid_login.txt"
-  - python client.py
+  - "pybot --variable USERNAME:$S_USERNAME --variable ACCESS_KEY:$S_ACCESS_KEY --outputdir /home/travis/build/Rafikhan29/SauceLabs_Gmail/results/ /home/travis/build/Rafikhan29/SauceLabs_Gmail/tests/valid_login.txt"
+  #- python client.py
 env:
   global:
     - S_USERNAME=Rafikhan29
