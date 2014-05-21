@@ -14,14 +14,11 @@ import sys
 
 def main(argv):
     reportdir = ''
-    print 'argv'
-    print argv[1]
-
     body = "The test execution reports from an automated batch run are attached. \n There may be a delay before the reports are archived. \n When archived the reports will be stored in the following directories:"
     
     msg = MIMEMultipart()
    
-    recipients = ['rafikhan.p@tenxlabs.com']
+    recipients = ['rafikhan.p@tenxlabs.com','mahendra.p@tenxlabs.com']
 
     me = 'rafikhan.p@tenxlabs.com'
     subject = 'The number of critical tests that failed are '
@@ -34,11 +31,17 @@ def main(argv):
             reportdir = arg
             part = MIMEBase('application', "octet-stream")
             print "Attaching the report in directory " + reportdir
-            part.set_payload(open(reportdir, "r").read())
+            part.set_payload(open(reportdir+'/report.html', "r").read())
             Encoders.encode_base64(part)
-            attachment = 'attachment; filename=' + reportdir
+            attachment = 'attachment; filename=' + reportdir+'/report.html'
             part.add_header('Content-Disposition', attachment)
             msg.attach(part)
+            part.set_payload(open(reportdir+'/log.html', "r").read())
+            Encoders.encode_base64(part)
+            attachment = 'attachment; filename=' + reportdir+'/log.html'
+            part.add_header('Content-Disposition', attachment)
+            msg.attach(part)
+
             subject += ' ' + reportdir
             body += '\nportal01.prv.sjc1.fatspaniel.net/Robot-Results/' + reportdir
 
