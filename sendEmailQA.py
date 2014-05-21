@@ -31,9 +31,9 @@ def main(argv):
             reportdir = arg
             part = MIMEBase('application', "octet-stream")
             print "Attaching the report in directory " + reportdir
-            part.set_payload(open(reportdir+'/results.zip', "r").read())
+            part.set_payload(open(reportdir+'results.zip', "r").read())
             Encoders.encode_base64(part)
-            attachment = 'attachment; filename=' + reportdir+'/results.zip'
+            attachment = 'attachment; filename=' + reportdir+'results.zip'
             part.add_header('Content-Disposition', attachment)
             msg.attach(part)
             subject += ' ' + reportdir
