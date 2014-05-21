@@ -24,7 +24,7 @@ script:
   - zip -r results.zip /home/travis/build/Rafikhan29/SauceLabs_Gmail/results/report.html /home/travis/build/Rafikhan29/SauceLabs_Gmail/results/log.html
   - cd /home/travis/build/Rafikhan29/SauceLabs_Gmail/results/
   - ls
-  - python sendEmailQA.py /home/travis/build/Rafikhan29/SauceLabs_Gmail/results
+  - python sendEmailQA.py /home/travis/build/Rafikhan29/SauceLabs_Gmail/results/results.zip
   
 #after_success: 
     
