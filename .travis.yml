@@ -21,6 +21,9 @@ before_script:
 script:
   - "pybot --variable USERNAME:$S_USERNAME --variable ACCESS_KEY:$S_ACCESS_KEY --outputdir /home/travis/build/Rafikhan29/SauceLabs_Gmail/results/ /home/travis/build/Rafikhan29/SauceLabs_Gmail/tests/valid_login.txt"
   #- python client.py
+  
+after_success: cat valid_login.txt  
+
 env:
   global:
     - S_USERNAME=Rafikhan29
