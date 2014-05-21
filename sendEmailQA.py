@@ -14,14 +14,15 @@ import sys
 
 def main(argv):
     reportdir = ''
-    body = "The test execution reports from an automated batch run are attached. \n There may be a delay before the reports are archived. \n When archived the reports will be stored in the following directories:"
+    body = "The test execution reports from an automated batch run are attached."
     
     msg = MIMEMultipart()
    
-    recipients = ['rafikhan.p@tenxlabs.com','sandesha.thandra@tenxlabs.com']
+    recipients = ['rafikhan.p@tenxlabs.com','vijaykumar.madishetty@tenxlabs.com']
 
     me = 'rafikhan.p@tenxlabs.com'
-    subject = 'The number of critical tests that failed are '
+    #subject = 'The number of critical tests that failed are '
+    subject = 'The summary reports from the following test runs are attached:'
     msg['From'] = me
     msg['To'] = COMMASPACE.join(recipients)
     msg['Date'] = formatdate(localtime = True)
