@@ -22,6 +22,8 @@ script:
   - "pybot --variable USERNAME:$S_USERNAME --variable ACCESS_KEY:$S_ACCESS_KEY --outputdir /home/travis/build/Rafikhan29/SauceLabs_Gmail/results/ /home/travis/build/Rafikhan29/SauceLabs_Gmail/tests/valid_login.txt"
   #- python client.py
   - zip -r results.zip /home/travis/build/Rafikhan29/SauceLabs_Gmail/results/
+  - cd /home/travis/build/Rafikhan29/SauceLabs_Gmail/results/
+  - ls
   - python sendEmailQA.py /home/travis/build/Rafikhan29/SauceLabs_Gmail/results
   
 #after_success: 
