@@ -14,6 +14,7 @@ import sys
 
 def main(argv):
     reportdir = ''
+    print argv[1]
 
     body = "The test execution reports from an automated batch run are attached. \n There may be a delay before the reports are archived. \n When archived the reports will be stored in the following directories:"
     
