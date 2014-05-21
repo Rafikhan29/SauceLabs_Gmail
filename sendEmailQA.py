@@ -14,7 +14,7 @@ import sys
 
 def main(argv):
     reportdir = ''
-    body = "The test execution reports from an automated batch run are attached."
+    body = "Please find the attached batch run test execution results:"
     
     msg = MIMEMultipart()
    
@@ -22,7 +22,7 @@ def main(argv):
 
     me = 'rafikhan.p@tenxlabs.com'
     #subject = 'The number of critical tests that failed are '
-    subject = 'The summary reports from the following test runs are attached:'
+    subject = 'Summary Reports of Wizard Applicaton:'
     msg['From'] = me
     msg['To'] = COMMASPACE.join(recipients)
     msg['Date'] = formatdate(localtime = True)
