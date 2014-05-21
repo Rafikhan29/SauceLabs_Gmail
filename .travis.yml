@@ -21,13 +21,13 @@ before_script:
 script:
   - "pybot --variable USERNAME:$S_USERNAME --variable ACCESS_KEY:$S_ACCESS_KEY --outputdir /home/travis/build/Rafikhan29/SauceLabs_Gmail/results/ /home/travis/build/Rafikhan29/SauceLabs_Gmail/tests/valid_login.txt"
   #- python client.py
-  - python sendEmailQA.py /home/travis/build/Rafikhan29/SauceLabs_Gmail/results/report.html
-after_success: 
+  - python sendEmailQA.py /home/travis/build/Rafikhan29/SauceLabs_Gmail/results
+#after_success: 
     
         #- cat /home/travis/build/Rafikhan29/SauceLabs_Gmail/results/log.html
-        - cat /home/travis/build/Rafikhan29/SauceLabs_Gmail/results/report.html
-        - cd /home/travis/build/Rafikhan29/SauceLabs_Gmail/results/
-        - ls
+        #- cat /home/travis/build/Rafikhan29/SauceLabs_Gmail/results/report.html
+        #- cd /home/travis/build/Rafikhan29/SauceLabs_Gmail/results/
+        #- ls
         #- cp /home/travis/build/Rafikhan29/SauceLabs_Gmail/results/report.html /home/travis/build/Rafikhan29/SauceLabs_Gmail/Results/
         
         
