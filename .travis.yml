@@ -27,7 +27,6 @@ script:
 #after_success: 
     
         #zip -r results.zip /home/travis/build/Rafikhan29/SauceLabs_Gmail/results/
-        
         #- cat /home/travis/build/Rafikhan29/SauceLabs_Gmail/results/log.html
         #- cd /home/travis/build/Rafikhan29/SauceLabs_Gmail/results/
         #- ls
